@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Ryan.jpg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Ryan.jpg?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="React,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JSX​    JSX是react发明的特殊写法语法，JSX=JavaScript+XML，就是JS和HTML的混合写法，这并不是JS引擎原生支持的，所以想在浏览器中直接执行，需要先转成ES5代码。jsx本质上就是一个js变量，可以作为参数、函数返回值、也可以用在循环/判断语句中。 1234ReactDOM.render(     &amp;lt;h1 id=&quot;msg&quot;&amp;gt;&amp;lt;span&amp;gt;he">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React学习笔记">
+<meta property="og:url" content="http://shangliushuai.cn/2017/06/16/React学习笔记/index.html">
+<meta property="og:site_name" content="Ryan Shang">
+<meta property="og:description" content="JSX​    JSX是react发明的特殊写法语法，JSX=JavaScript+XML，就是JS和HTML的混合写法，这并不是JS引擎原生支持的，所以想在浏览器中直接执行，需要先转成ES5代码。jsx本质上就是一个js变量，可以作为参数、函数返回值、也可以用在循环/判断语句中。 1234ReactDOM.render(     &amp;lt;h1 id=&quot;msg&quot;&amp;gt;&amp;lt;span&amp;gt;he">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-24T00:13:45.592Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React学习笔记">
+<meta name="twitter:description" content="JSX​    JSX是react发明的特殊写法语法，JSX=JavaScript+XML，就是JS和HTML的混合写法，这并不是JS引擎原生支持的，所以想在浏览器中直接执行，需要先转成ES5代码。jsx本质上就是一个js变量，可以作为参数、函数返回值、也可以用在循环/判断语句中。 1234ReactDOM.render(     &amp;lt;h1 id=&quot;msg&quot;&amp;gt;&amp;lt;span&amp;gt;he">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://shangliushuai.cn/2017/06/16/React学习笔记/">
+
+
+
+
+
+  <title>React学习笔记 | Ryan Shang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ryan Shang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生死看淡，不服就干</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shangliushuai.cn/2017/06/16/React学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryan Shang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Ryan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryan Shang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T00:00:00+08:00">
+                2017-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h1><p>​    JSX是react发明的特殊写法语法，JSX=JavaScript+XML，就是JS和HTML的混合写法，这并不是JS引擎原生支持的，所以想在浏览器中直接执行，需要先转成ES5代码。jsx本质上就是一个js变量，可以作为参数、函数返回值、也可以用在循环/判断语句中。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">     &lt;h1 id=<span class="string">"msg"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>,</span><br><span class="line">     <span class="built_in">document</span>.querySelector(<span class="string">'#root'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>转义成为：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1参数是元素类型，2参数是属性对象，3参数是子元素</span></span><br><span class="line">ReactDom.render(React.createElement(</span><br><span class="line">    <span class="string">"h1"</span>,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="string">"msg"</span> &#125;,</span><br><span class="line">    React.createElement(</span><br><span class="line">        <span class="string">"span"</span>,</span><br><span class="line">        <span class="literal">null</span>,</span><br><span class="line">        <span class="string">"hello"</span></span><br><span class="line">    ),</span><br><span class="line">    React.createElement(</span><br><span class="line">        <span class="string">"span"</span>,</span><br><span class="line">        <span class="literal">null</span>,</span><br><span class="line">        <span class="string">"world"</span></span><br><span class="line">    )</span><br><span class="line">), <span class="built_in">document</span>.querySelector(<span class="string">'#root'</span>));</span><br></pre></td></tr></table></figure>
+<p>原理：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//createElement方法执行后会返回一个虚拟DOM对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createElement</span>(<span class="params">type, props, children</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;type, <span class="attr">props</span>: &#123;...props, children&#125;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把一个虚拟DOM变成真实DOM并插入容器内部</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params">virtualDOM, container</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ele = <span class="built_in">document</span>.createElement(virtualDOM.type);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> attr <span class="keyword">in</span> virtualDOM.props) &#123;</span><br><span class="line">        <span class="keyword">if</span> (attr === <span class="string">'children'</span>) &#123;</span><br><span class="line">            ele.innerHTML = virtualDOM.props[attr];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ele.setAttribute(attr, virtualDOM.props[attr]);</span><br><span class="line">        &#125;</span><br><span class="line">        container.appendChild(ele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ReactDom渲染过程："><a href="#ReactDom渲染过程：" class="headerlink" title="ReactDom渲染过程："></a>ReactDom渲染过程：</h2><ol>
+<li>把jsx元素转成React.createElement方法的调用</li>
+<li>createElement会返回一个虚拟DOM对象</li>
+<li>render方法负责把虚拟DOM对象转换成真实DOM对象，并插入到容器内部</li>
+</ol>
+<h2 id="jsx规则："><a href="#jsx规则：" class="headerlink" title="jsx规则："></a>jsx规则：</h2><ol>
+<li>如果需要换行的话，需要把jsx放在小括号里</li>
+<li>如果想在js中显示js变量，需要放入大括号，里面可以放入js表达式</li>
+<li>表达式中不能放对象，可以放字符串、数字等，还可以放函数的调用</li>
+</ol>
+<h2 id="jsx-react元素的属性："><a href="#jsx-react元素的属性：" class="headerlink" title="jsx react元素的属性："></a>jsx react元素的属性：</h2><ol>
+<li>普通属性</li>
+<li>特殊属性 class =&gt; className   for =&gt; htmlFor</li>
+<li>如果属性名是多个单词的话，驼峰命名法 z-index =&gt; zIndex   tab-index =&gt; tabIndex</li>
+<li>react元素有一个非常重要的属性叫children，指这个元素的所有子元素</li>
+</ol>
+<h2 id="jsx设置事件："><a href="#jsx设置事件：" class="headerlink" title="jsx设置事件："></a>jsx设置事件：</h2><p>​    给react元素设置属性 on+事件名，事件名开头大写。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick=&#123;fn&#125;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="ref："><a href="#ref：" class="headerlink" title="ref："></a>ref：</h2><p>​    ref的值是一个函数，当这个DOM挂载到页面之后会执行绑定的函数，参数就是此react元素对应的真实DOM元素。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当这个input的虚拟DOM转成真实的并插入到页面中后，会调用元素的ref函数，并且把这个真实DOM作为参数传到函数中</span></span><br><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"username"</span> required ref=&#123;input =&gt; &#123;<span class="built_in">console</span>.log(input)&#125;&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>​    组件就像一个纯函数，接受任意参数，返回一个并且只有一个react元素。声明组件有两种方式：函数组件和类组件。</p>
+<h2 id="渲染组件的过程："><a href="#渲染组件的过程：" class="headerlink" title="渲染组件的过程："></a>渲染组件的过程：</h2><ol>
+<li>初始化属性对象，然后调用类的构造函数，并把类的属性对象传进去，得到组件的实例</li>
+<li>会调用实例的render方法，得到返回的react元素</li>
+<li>render方法会把react元素渲染成真实的DOM元素，并挂载到容器内部</li>
+</ol>
+<h2 id="函数式组件："><a href="#函数式组件：" class="headerlink" title="函数式组件："></a>函数式组件：</h2><pre><code>  1. 接受一个props参数，是一个对象
+2. 组件名称必须首字母大写，render只能通过首字母判断是元素还是组件（组件和元素使用方式完全相同，但渲染和使用方式不同，元素之间渲染，组件渲染返回值）
+3. 组件函数要返回并且只能返回一个顶级react元素
+4. 函数组件没有实例，也没有this
+</code></pre><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (props.username) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello &#123;props.username&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello stranger<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="类组件："><a href="#类组件：" class="headerlink" title="类组件："></a>类组件：</h2><ol>
+<li>必须继承自React.Component</li>
+<li>类组件是有实例的，需要通过this来调用属性</li>
+<li>传给组件的属性会全部封装到一个对象中作为实参传给组件对象</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.props.username) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello &#123;this.props.username&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello stranger<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Welcome username=<span class="string">"Ryan"</span>/&gt;</span><br><span class="line">                &lt;Welcome username=<span class="string">"Jarvan"</span>/&gt;</span><br><span class="line">                &lt;Welcome username=<span class="string">"Wen"</span>/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="组件的属性和状态："><a href="#组件的属性和状态：" class="headerlink" title="组件的属性和状态："></a>组件的属性和状态：</h2><ol>
+<li>组件的属性是由父组件传入的，状态的值时内部初始化的</li>
+<li>组件的属性不能修改， 状态的值是可以修改的</li>
+<li>组件的值自己不能改，但是父组件可以改</li>
+<li>组件的状态是内部初始化的，只能组件内部修改，外部不能修改</li>
+<li>组件的属性和状态都是当前组件的数据源</li>
+<li>组件的属性是可以自上而下流动的。单项数据流，只能父传子，只能子传父，也不能兄弟之间传递</li>
+</ol>
+<h2 id="给组件传入属性对象的一种方式："><a href="#给组件传入属性对象的一种方式：" class="headerlink" title="给组件传入属性对象的一种方式："></a>给组件传入属性对象的一种方式：</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Comment</span> &#123;<span class="attr">...comment</span>&#125;/&gt;</span>, document.querySelector('#root'));</span></span><br></pre></td></tr></table></figure>
+<h2 id="组件中循环列表："><a href="#组件中循环列表：" class="headerlink" title="组件中循环列表："></a>组件中循环列表：</h2><p>​    遍历列表需要给每一项设置key属性</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lessons = [</span><br><span class="line">    &#123;<span class="attr">title</span>: <span class="string">'Lesson 1: title'</span>, <span class="attr">description</span>: <span class="string">'Lesson 1: description'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">title</span>: <span class="string">'Lesson 2: title'</span>, <span class="attr">description</span>: <span class="string">'Lesson 2: description'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">title</span>: <span class="string">'Lesson 3: title'</span>, <span class="attr">description</span>: <span class="string">'Lesson 3: description'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">title</span>: <span class="string">'Lesson 4: title'</span>, <span class="attr">description</span>: <span class="string">'Lesson 4: description'</span>&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LessonsList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &#123;<span class="keyword">this</span>.props.lessons.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> (</span><br><span class="line">                        &lt;Lesson lesson=&#123;item&#125; index=&#123;index&#125; key=&#123;index&#125;/&gt;</span><br><span class="line">                    )</span><br><span class="line">                &#125;)&#125;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="state"><a href="#state" class="headerlink" title="state"></a>state</h1><p>​    组件的状态用来描述组件内部可以变化的数据。组件的状态是类组件所特有的。当类实例化的时候，会自动调用构造函数，我们可以在构造函数中初始化状态对象。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    	<span class="keyword">super</span>(props); <span class="comment">//super指向父类的构造函数 this.props=props</span></span><br><span class="line">    	<span class="comment">//当一个类继承另一个类时，需要先调用父类的构造函数</span></span><br><span class="line">    	<span class="keyword">this</span>.state = &#123;<span class="attr">time</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    修改state需要掉用实例的setState方法，setState方法用来修改状态，传入一个增量对象，会覆盖同名属性或增加新属性，不会删除老的属性。调用setState不但会修改状态，还会重新调用render方法。除了构造函数外，永远不要直接操作state。</p>
+<p>​    为了提高性能，react可能会把多个setState调用合并成一个。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">time</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    注意，<strong>setState方法是一个异步方法</strong>。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> (&#123;<span class="attr">number</span>: prevState.number + <span class="number">1</span>&#125;));</span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> (&#123;<span class="attr">number</span>: prevState.number + <span class="number">2</span>&#125;));</span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> (&#123;<span class="attr">number</span>: prevState.number + <span class="number">3</span>&#125;));</span><br><span class="line"><span class="comment">//等价于 =&gt;</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;<span class="attr">number</span>: <span class="keyword">this</span>.state.number+<span class="number">1</span>&#125;,()=&gt;&#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">number</span>: <span class="keyword">this</span>.state.number+<span class="number">2</span>&#125;,()=&gt;&#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;<span class="attr">number</span>: <span class="keyword">this</span>.state.number+<span class="number">3</span>&#125;,()=&gt;&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.number);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="兄弟间传递数据——状态提升："><a href="#兄弟间传递数据——状态提升：" class="headerlink" title="兄弟间传递数据——状态提升："></a>兄弟间传递数据——状态提升：</h2><p>​    要让两个兄弟之间传递数据，需要找到他们最近的共同祖先，然后在共同祖先组件中定义一个特权函数，子孙组件通过这个共同祖先组件的特权方法，可以改变这个共同祖先的state状态。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Input</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    handleChange(event) &#123;</span><br><span class="line">        <span class="keyword">let</span> percent = event.target.value;</span><br><span class="line">        <span class="keyword">this</span>.props.setPercent(percent);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="comment">//给一个输入框一个value值，会变成只读的</span></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;input type=<span class="string">'number'</span> onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>)&#125; value=&#123;<span class="keyword">this</span>.props.percent&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class PercentageShower extends React.Component &#123;</span></span><br><span class="line"><span class="regexp">    render() &#123;</span></span><br><span class="line"><span class="regexp">        return (</span></span><br><span class="line"><span class="regexp">            &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                &#123;</span></span><br><span class="line"><span class="regexp">                    (parseFloat(this.props.percent)*100).toFixed(2)+'%'</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//要让两个兄弟之间传递数据，需要找到他们最近的共同祖先</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PercentageApp</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;<span class="attr">percent</span>: <span class="number">0.00</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义了一个可以改变父组件中状态对象中percent的方法</span></span><br><span class="line">    setPercent = <span class="function">(<span class="params">percent</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;<span class="attr">percent</span>: percent&#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Input percent=&#123;<span class="keyword">this</span>.state.percent&#125; setPercent=&#123;<span class="keyword">this</span>.setPercent&#125;/&gt;</span><br><span class="line">                &lt;PercentageShower percent=&#123;<span class="keyword">this</span>.state.percent&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p>componentWillReceiveProps: 将要接收属性</p>
+<p>componentWillMount: 组件将要挂载</p>
+<p>componentDidMount: 组件完成挂载</p>
+<p>componentWillUpdate: 组件即将更新</p>
+<p>componentDidUpdate: 组件完成更新</p>
+<p>componentWillUnmount: 组件即将销毁</p>
+<p>shouldComponentUpdate: 询问组件是否更新</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate(prevProps, prevState) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'询问组件是否更新'</span>);</span><br><span class="line">    <span class="keyword">if</span> (prevState.number &lt; <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h1><p>​    Router是路由的容器。</p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p>​    安装react-router-dom</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install react-router-dom</span><br></pre></td></tr></table></figure>
+<p>​    引入react-router-dom并使用</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;HashRouter <span class="keyword">as</span> Router,&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="comment">//需要使用路由功能的部分需要被Router组件包裹起来</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">			...</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Router&gt;, <span class="built_in">document</span>.querySelector(<span class="string">'#root'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>Router组件会给他的所有子组件传递三个属性：</p>
+<ol>
+<li><p>history 是用来操作历史</p>
+<ul>
+<li>goBack 返回上一个路径</li>
+<li>push 跳转路径</li>
+</ul>
+</li>
+<li><p>location 路径</p>
+<ul>
+<li>pathname 路径名</li>
+<li>state 路径状态</li>
+</ul>
+</li>
+<li><p>match 匹配上有值，匹配不上为null</p>
+<ul>
+<li><p>isExact 是否精确匹配</p>
+</li>
+<li><p>params 路径参数</p>
+</li>
+<li><p>path 来自于路由里的path属性</p>
+</li>
+<li><p>url 来自于url地址中的#</p>
+<p> 当有路径参数的时候path和url不一样</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Route"><a href="#Route" class="headerlink" title="Route"></a>Route</h1><p>Route是路由规则</p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>使用时，首先使用Link组件实现跳转（类似于Vue中的router-link），然后使用Route组件，通过传入path和component属性，匹配路径默认匹配前缀，只要当前url路径和path的前缀相同就表示能匹配上，然后渲染对应的组件（一组Route类似于Vue中的router-view)。</p>
+<p><strong>需要精确匹配，需要给Route组建设置exact属性。</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    HashRouter <span class="keyword">as</span> Router,</span><br><span class="line">    Route,</span><br><span class="line">    Link</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="comment">//path 路由</span></span><br><span class="line"><span class="comment">//component 组件名称</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">                &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>用户<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">                &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/profile"</span>&gt;</span>个人<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">            &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Route exact path="/</span><span class="string">" component=&#123;Home&#125;/&gt;</span></span><br><span class="line"><span class="string">            &lt;Route path="</span>/user<span class="string">" component=&#123;User&#125;/&gt;</span></span><br><span class="line"><span class="string">            &lt;Route path="</span>/profile<span class="string">" component=&#123;Profile&#125;/&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;/Router&gt;, document.querySelector('#root')</span></span><br><span class="line"><span class="string">);</span></span><br></pre></td></tr></table></figure>
+<p>Link组件中的to属性也可以写作一个对象</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link to=&#123;&#123;</span><br><span class="line">  pathname: <span class="string">'/courses'</span>,</span><br><span class="line">  search: <span class="string">'?sort=name'</span>,</span><br><span class="line">  hash: <span class="string">'#the-hash'</span>,</span><br><span class="line">  state: &#123; <span class="attr">fromDashboard</span>: <span class="literal">true</span> &#125;</span><br><span class="line">&#125;&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h2><p>如果希望最多指向一个组件，则需要把若干个路由由switch包裹起来。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">	&lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">	&lt;Route path=<span class="string">"/user"</span> component=&#123;User&#125;/&gt;</span><br><span class="line">	&lt;Route path=<span class="string">"/login"</span> component=&#123;Login&#125;/&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="路由组件渲染三种方法"><a href="#路由组件渲染三种方法" class="headerlink" title="路由组件渲染三种方法"></a>路由组件渲染三种方法</h2><ul>
+<li>component = 组件</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>render 是一个函数，返回值是一个组件，路径匹配则渲染</li>
+</ul>
+<p>​       因为返回的组件不是Router组件的子组件，所以没有Router组件传递过来的三个属性，可用withRouter组件解决，也可直接给返回的组件传入三个属性</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//rest=&#123;path:"/profile"&#125;</span></span><br><span class="line">&lt;Route &#123;...rest&#125; render=&#123;(&#123;location,history,match&#125;) =&gt; (</span><br><span class="line">     &lt;Profile  history=&#123;history&#125;/&gt; :</span><br><span class="line">)&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>children 是一个函数，返回一個React DOM元素，无论匹不匹配都渲染</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&#123;to&#125; children=&#123;(&#123;match&#125;) =&gt; (</span><br><span class="line">     &lt;li className=&#123;match ? <span class="string">"active"</span> : <span class="string">""</span>&#125;&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;to&#125;</span>&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">)&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="URL参数"><a href="#URL参数" class="headerlink" title="URL参数"></a>URL参数</h2><p>在Route中，设置路径参数，在Link组件中直接访问按照需要的路径参数跳转链接即可。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">"/user/detail/:id"</span> component=&#123;UserDetail&#125;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;Link to=&#123;&#123;<span class="attr">pathname</span>: <span class="string">`/user/detail/<span class="subst">$&#123;user.id&#125;</span>`</span>, <span class="attr">state</span>: &#123;user&#125;&#125;&#125;&gt;&#123;user.username&#125;&lt;<span class="regexp">/Link&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="认证保护路由"><a href="#认证保护路由" class="headerlink" title="认证保护路由"></a>认证保护路由</h2><p>受保护路由是指如果当前用户未登录，则不能访问被保护的路由。</p>
+<p>原理是利用Route组件的render渲染方式，根据条件判断渲染不同组件。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ProtectedRoute.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123;<span class="attr">component</span>: Component, ...rest&#125;) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;Route &#123;...rest&#125; render=&#123;(&#123;location&#125;) =&gt; (</span><br><span class="line">            localStorage.getItem(<span class="string">'login'</span>) ? <span class="xml"><span class="tag">&lt;<span class="name">Component</span>/&gt;</span></span> :</span><br><span class="line">                &lt;Redirect to=&#123;&#123;<span class="attr">pathname</span>: <span class="string">"/login"</span>, <span class="attr">state</span>: &#123;<span class="attr">from</span>: location.pathname&#125;&#125;&#125;/&gt;</span><br><span class="line">        )&#125;/&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用时</span></span><br><span class="line">&lt;ProtectedRoute path=<span class="string">"/profile"</span> component=&#123;Profile&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="自定义链接"><a href="#自定义链接" class="headerlink" title="自定义链接"></a>自定义链接</h2><p>利用Route组件的children渲染方式，对组件进行操作。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MenuLink.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123;to, children,&#125;) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;Route exact path=&#123;to&#125; children=&#123;(&#123;match&#125;) =&gt; (</span><br><span class="line">            &lt;li className=&#123;match ? <span class="string">"active"</span> : <span class="string">""</span>&#125;&gt;<span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;to&#125;</span>&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">        )&#125;/&gt;</span><br><span class="line">)&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="阻止导航"><a href="#阻止导航" class="headerlink" title="阻止导航"></a>阻止导航</h2><p>使用Prompt组件，当when属性的值为true的时候，弹出confirm框。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Prompt&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line">&lt;Prompt </span><br><span class="line">	when=&#123;<span class="keyword">this</span>.state.isEditing&#125;</span><br><span class="line">	message=&#123;location =&gt; <span class="string">`切换到<span class="subst">$&#123;location.pathname&#125;</span>？`</span>&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="未匹配"><a href="#未匹配" class="headerlink" title="未匹配"></a>未匹配</h2><p>一般放在路由规则最后，配合Switch组件使用，用于404场景。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route component=&#123;NoMatch&#125;/&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/07/JS中两个等号的比较/" rel="next" title="JS中两个等号的比较">
+                <i class="fa fa-chevron-left"></i> JS中两个等号的比较
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/20/Vue.js学习笔记/" rel="prev" title="Vue.js学习笔记">
+                Vue.js学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Ryan.jpg" alt="Ryan Shang">
+            
+              <p class="site-author-name" itemprop="name">Ryan Shang</p>
+              <p class="site-description motion-element" itemprop="description">前端渣渣一枚，热爱科技，热爱搞事请</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:Ryan.Shang@outlook.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSX"><span class="nav-number">1.</span> <span class="nav-text">JSX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ReactDom渲染过程："><span class="nav-number">1.1.</span> <span class="nav-text">ReactDom渲染过程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsx规则："><span class="nav-number">1.2.</span> <span class="nav-text">jsx规则：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsx-react元素的属性："><span class="nav-number">1.3.</span> <span class="nav-text">jsx react元素的属性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsx设置事件："><span class="nav-number">1.4.</span> <span class="nav-text">jsx设置事件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref："><span class="nav-number">1.5.</span> <span class="nav-text">ref：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件"><span class="nav-number">2.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染组件的过程："><span class="nav-number">2.1.</span> <span class="nav-text">渲染组件的过程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式组件："><span class="nav-number">2.2.</span> <span class="nav-text">函数式组件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类组件："><span class="nav-number">2.3.</span> <span class="nav-text">类组件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的属性和状态："><span class="nav-number">2.4.</span> <span class="nav-text">组件的属性和状态：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给组件传入属性对象的一种方式："><span class="nav-number">2.5.</span> <span class="nav-text">给组件传入属性对象的一种方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件中循环列表："><span class="nav-number">2.6.</span> <span class="nav-text">组件中循环列表：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#state"><span class="nav-number">3.</span> <span class="nav-text">state</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟间传递数据——状态提升："><span class="nav-number">3.1.</span> <span class="nav-text">兄弟间传递数据——状态提升：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">4.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Router"><span class="nav-number">5.</span> <span class="nav-text">Router</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始使用"><span class="nav-number">5.1.</span> <span class="nav-text">开始使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Route"><span class="nav-number">6.</span> <span class="nav-text">Route</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">6.1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Switch"><span class="nav-number">6.2.</span> <span class="nav-text">Switch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由组件渲染三种方法"><span class="nav-number">6.3.</span> <span class="nav-text">路由组件渲染三种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL参数"><span class="nav-number">6.4.</span> <span class="nav-text">URL参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认证保护路由"><span class="nav-number">6.5.</span> <span class="nav-text">认证保护路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义链接"><span class="nav-number">6.6.</span> <span class="nav-text">自定义链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止导航"><span class="nav-number">6.7.</span> <span class="nav-text">阻止导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未匹配"><span class="nav-number">6.8.</span> <span class="nav-text">未匹配</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Shang</span>
+  <span class="post-meta-divider">|</span>
+  <a href="http://www.beian.miit.gov.cn/" target="_blank">京ICP备18027486号</a>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
