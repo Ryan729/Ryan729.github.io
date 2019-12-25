@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="Git,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="​    以前在学习JavaScript时总是有些漏洞，比如JavaScript中两个等号的比较所带来的类型转换问题，今天特别拿出来研究整理了一下。 对象==对象引用类型的数据比较的是引用地址12&amp;#123;&amp;#125;==&amp;#123;&amp;#125;; //false，引用地址不同[]==[]; //false，引用地址不同 对象==字符串对象通过toString()转换成字符串 1234[].to">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="今天圣诞节，在工作时侯，出现了一个有意思的意外情况，这里做下记录。 事情经过一个比较大的需求，每天都保持了一次个人开发分支提交。今天发现有4次提交没有合并到主开发分支，于是动手合并，合并记如下： 123456789101112131410262  gco dev10263  git pull10264  git log10265  gco feature/my-dev-branch10266  g">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中两个等号的比较">
-<meta property="og:url" content="http://shangliushuai.cn/2017/06/07/JS中两个等号的比较/index.html">
+<meta property="og:title" content="2019-12-25-记录一次个人git事故">
+<meta property="og:url" content="http://shangliushuai.cn/2019/12/25/2019-12-25-记录一次个人git事故/index.html">
 <meta property="og:site_name" content="Ryan Shang">
-<meta property="og:description" content="​    以前在学习JavaScript时总是有些漏洞，比如JavaScript中两个等号的比较所带来的类型转换问题，今天特别拿出来研究整理了一下。 对象==对象引用类型的数据比较的是引用地址12&amp;#123;&amp;#125;==&amp;#123;&amp;#125;; //false，引用地址不同[]==[]; //false，引用地址不同 对象==字符串对象通过toString()转换成字符串 1234[].to">
+<meta property="og:description" content="今天圣诞节，在工作时侯，出现了一个有意思的意外情况，这里做下记录。 事情经过一个比较大的需求，每天都保持了一次个人开发分支提交。今天发现有4次提交没有合并到主开发分支，于是动手合并，合并记如下： 123456789101112131410262  gco dev10263  git pull10264  git log10265  gco feature/my-dev-branch10266  g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-24T00:13:45.592Z">
+<meta property="og:updated_time" content="2019-12-25T10:53:58.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中两个等号的比较">
-<meta name="twitter:description" content="​    以前在学习JavaScript时总是有些漏洞，比如JavaScript中两个等号的比较所带来的类型转换问题，今天特别拿出来研究整理了一下。 对象==对象引用类型的数据比较的是引用地址12&amp;#123;&amp;#125;==&amp;#123;&amp;#125;; //false，引用地址不同[]==[]; //false，引用地址不同 对象==字符串对象通过toString()转换成字符串 1234[].to">
+<meta name="twitter:title" content="2019-12-25-记录一次个人git事故">
+<meta name="twitter:description" content="今天圣诞节，在工作时侯，出现了一个有意思的意外情况，这里做下记录。 事情经过一个比较大的需求，每天都保持了一次个人开发分支提交。今天发现有4次提交没有合并到主开发分支，于是动手合并，合并记如下： 123456789101112131410262  gco dev10263  git pull10264  git log10265  gco feature/my-dev-branch10266  g">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://shangliushuai.cn/2017/06/07/JS中两个等号的比较/">
+  <link rel="canonical" href="http://shangliushuai.cn/2019/12/25/2019-12-25-记录一次个人git事故/">
 
 
 
 
 
-  <title>JS中两个等号的比较 | Ryan Shang</title>
+  <title>2019-12-25-记录一次个人git事故 | Ryan Shang</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shangliushuai.cn/2017/06/07/JS中两个等号的比较/">
+    <link itemprop="mainEntityOfPage" href="http://shangliushuai.cn/2019/12/25/2019-12-25-记录一次个人git事故/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ryan Shang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS中两个等号的比较</h1>
+          <h1 class="post-title" itemprop="name headline">2019-12-25-记录一次个人git事故</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T00:00:00+08:00">
-                2017-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T00:00:00+08:00">
+                2019-12-25
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
                   </a>
                 </span>
 
@@ -342,35 +342,21 @@
       
 
       
-        <p>​    以前在学习JavaScript时总是有些漏洞，比如JavaScript中两个等号的比较所带来的类型转换问题，今天特别拿出来研究整理了一下。</p>
-<h3 id="对象-对象"><a href="#对象-对象" class="headerlink" title="对象==对象"></a>对象==对象</h3><p>引用类型的数据比较的是引用地址<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;==&#123;&#125;; <span class="comment">//false，引用地址不同</span></span><br><span class="line">[]==[]; <span class="comment">//false，引用地址不同</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="对象-字符串"><a href="#对象-字符串" class="headerlink" title="对象==字符串"></a>对象==字符串</h3><p>对象通过toString()转换成字符串</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[].toString(); <span class="comment">//''</span></span><br><span class="line">(&#123;&#125;).toString(); <span class="comment">//[Object Object]</span></span><br><span class="line">[]==<span class="string">''</span>; <span class="comment">//true</span></span><br><span class="line">(&#123;&#125;)==<span class="string">'abc'</span>; <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<h3 id="对象-数字"><a href="#对象-数字" class="headerlink" title="对象==数字"></a>对象==数字</h3><p>对象先通过toString()转换成字符串，字符串再通过Number()转换成数字</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>]==<span class="number">1</span>; <span class="comment">//true [1]=&gt;'1','1'=&gt;1</span></span><br></pre></td></tr></table></figure>
-<h3 id="对象-布尔"><a href="#对象-布尔" class="headerlink" title="对象==布尔"></a>对象==布尔</h3><p>左右两边先统一转换成数字类型再进行比较</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[]==<span class="literal">true</span>; <span class="comment">//false []=&gt;0,true=&gt;1</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串-数字"><a href="#字符串-数字" class="headerlink" title="字符串==数字"></a>字符串==数字</h3><p>把字符串转换成数字再进行比较</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'abc'</span>==<span class="literal">NaN</span>; <span class="comment">//false 'abc'=&gt;NaN NaN和NaN不相等</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串-布尔"><a href="#字符串-布尔" class="headerlink" title="字符串==布尔"></a>字符串==布尔</h3><p>左右两边先转化成数字再比较</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1'</span>==<span class="literal">true</span>; <span class="comment">//true '1'=&gt;1,true=&gt;1</span></span><br></pre></td></tr></table></figure>
-<h3 id="数字-布尔"><a href="#数字-布尔" class="headerlink" title="数字==布尔"></a>数字==布尔</h3><p>布尔类型转换成数类型再进行比较</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span>==<span class="number">3</span>; <span class="comment">//false true=&gt;1</span></span><br></pre></td></tr></table></figure>
-<h3 id="NaN-NaN"><a href="#NaN-NaN" class="headerlink" title="NaN==NaN"></a>NaN==NaN</h3><p>NaN和任何数(包括自己)比较时都返回false</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span>==<span class="literal">NaN</span>; <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<h3 id="null-undefined"><a href="#null-undefined" class="headerlink" title="null==undefined"></a>null==undefined</h3><p>左右两边不做数据类型转换，返回结果为true</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span>==<span class="literal">undefined</span>; <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>null和undefined没有toString()方法，和任何数去比较，返回结果都为false。和自身比较返回true。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span>==<span class="literal">false</span>; <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<p>​    按照我的想法，两个等号比较，大致上类型转换的思路是：</p>
-<ol>
-<li>对象和对象间比较引用地址</li>
-<li>对象和三种基本数据类型转换，先转换成字符串，如果需要则继续转换则数字</li>
-<li>三种基本数据类型转换成数字再进行比较</li>
-<li>null和undefined和除了自身任何数比较都为false</li>
-<li>NaN任何时候比较都返回false</li>
+        <p>今天圣诞节，在工作时侯，出现了一个有意思的意外情况，这里做下记录。</p>
+<h4 id="事情经过"><a href="#事情经过" class="headerlink" title="事情经过"></a>事情经过</h4><p>一个比较大的需求，每天都保持了一次个人开发分支提交。今天发现有4次提交没有合并到主开发分支，于是动手合并，合并记如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">10262  gco dev</span><br><span class="line">10263  git pull</span><br><span class="line">10264  git <span class="built_in">log</span></span><br><span class="line">10265  gco feature/my-dev-branch</span><br><span class="line">10266  git rebase dev</span><br><span class="line">10267  git rebase -i HEAD~4</span><br><span class="line">10268  git <span class="built_in">log</span></span><br><span class="line">10269  git rebase -i HEAD~1</span><br><span class="line">10270  git <span class="built_in">log</span></span><br><span class="line">10271  git push -f</span><br><span class="line">10272  gco dev</span><br><span class="line">10273  git merge feature/my-dev-branch</span><br><span class="line">10274  git push</span><br><span class="line">10275  git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p>我们部门合并到主开发分支前，要求合并下commit记录，按照以往的流程是没有问题的。</p>
+<p>但是在执行<code>git rebase -i HEAD~4</code>合并commit记录时候，可能最近用vim写文件删除操作较多，顺手把三个记录直接使用vim快捷操作<code>dd</code>删除并快速保存，并不是修改提交记录前的标签。当时并没有注意，执行<code>git push -f</code>后，发现VSCode中打开的文件显示已删除，于是才发现问题。</p>
+<h4 id="事情后果"><a href="#事情后果" class="headerlink" title="事情后果"></a>事情后果</h4><p>如果不处理，相当于三天工作量打水漂，代码需要重写，严重影响排期。</p>
+<h4 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h4><p>第一反应是执行<code>git log</code>查看已经提交的记录是否存在，存在的话使用<code>git reset</code>配合记录的哈希值可以恢复到那次提交记录。结果当然相关 的commit 记录已经被删除。</p>
+<p>于是去git官网和搜索引擎下找了commit记录丢失后的相关命令，发现这个命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+<p>返回结果里面包含本队分支的操作记录，包括提交、切换分支等，在其中找到对应提交的哈希值，使用<code>git reset</code>命令成功回到最新一次提交，找回所有代码。</p>
+<h4 id="事后反思"><a href="#事后反思" class="headerlink" title="事后反思"></a>事后反思</h4><ol>
+<li>对git操作一定要谨慎</li>
+<li>每做一步操作，及时检查，不能认为自己经常操作的步骤就一定没有问题</li>
+<li>多了解git的命令，有助于出错后及时拨乱反正</li>
 </ol>
-<p>​    JavaScript中的这种隐式数据类型转换，有些时候确实会带来一些问题。为了减少这些问题对代码产生影响，我决定尽量少用相等，多用全等以便去更好的控制数据类型。</p>
 
       
     </div>
@@ -388,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
           
         </div>
       
@@ -401,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/07/mongoose中关于user表的问题/" rel="next" title="mongoose中关于user表的问题">
-                <i class="fa fa-chevron-left"></i> mongoose中关于user表的问题
+              <a href="/2019/12/22/2019-12-22-Linux任务脚本/" rel="next" title="2019-12-22-Linux任务脚本">
+                <i class="fa fa-chevron-left"></i> 2019-12-22-Linux任务脚本
               </a>
             
           </div>
@@ -410,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/16/React学习笔记/" rel="prev" title="React学习笔记">
-                React学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -555,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-对象"><span class="nav-number">1.</span> <span class="nav-text">对象==对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-字符串"><span class="nav-number">2.</span> <span class="nav-text">对象==字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-数字"><span class="nav-number">3.</span> <span class="nav-text">对象==数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-布尔"><span class="nav-number">4.</span> <span class="nav-text">对象==布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串-数字"><span class="nav-number">5.</span> <span class="nav-text">字符串==数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串-布尔"><span class="nav-number">6.</span> <span class="nav-text">字符串==布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字-布尔"><span class="nav-number">7.</span> <span class="nav-text">数字==布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN-NaN"><span class="nav-number">8.</span> <span class="nav-text">NaN==NaN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null-undefined"><span class="nav-number">9.</span> <span class="nav-text">null==undefined</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#事情经过"><span class="nav-number">1.</span> <span class="nav-text">事情经过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事情后果"><span class="nav-number">2.</span> <span class="nav-text">事情后果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决过程"><span class="nav-number">3.</span> <span class="nav-text">解决过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事后反思"><span class="nav-number">4.</span> <span class="nav-text">事后反思</span></a></li></ol></div>
             
 
           </div>
