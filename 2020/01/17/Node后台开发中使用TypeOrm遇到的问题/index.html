@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="心情,">
+  <meta name="keywords" content="Node,TypeOrm,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="突然之间，就想写点东西。 有人问过我，为什么选择北漂？ 当时自己嘴上的回答很简单：自己的行业在西安找一份高工资的工作不容易，尤其是自己还处于处起步阶段，是个前端界的小学生。 其实，说心里话，当时自己心里也没有答案。 这么一两年过去了，可能心里面也有了答案。 一方面，我不想成为一个异类，帝都虽苦，可是不论是早上7点上班还是晚上10点下班，总有大堆大堆的人一起，虽然在外人看会像行尸走肉一样，但是每天真">
-<meta name="keywords" content="心情">
+<meta name="description" content="前言最近项目中使用Node开发，Nest.js作为框架，TypeOrm连接数据库，期间遇到一些坑，这里记录一下。 问题1. 插入数据之后返回的ID集合，ID相同在TypeOrm插入数据库操作的返回结果中，identifiers字段会是插入数据的id集合，预期情况应该是这样的： 1234[  &amp;#123; id: 1 &amp;#125;,  &amp;#123; id: 2 &amp;#125;] 但实际开发中发现是这样">
+<meta name="keywords" content="Node,TypeOrm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="写在五一节后的一些思考">
-<meta property="og:url" content="http://shangliushuai.cn/2019/05/07/写在五一节后的一些思考/index.html">
+<meta property="og:title" content="2020-01-17-Node后台开发中使用TypeOrm遇到的问题">
+<meta property="og:url" content="http://shangliushuai.cn/2020/01/17/Node后台开发中使用TypeOrm遇到的问题/index.html">
 <meta property="og:site_name" content="Ryan Shang">
-<meta property="og:description" content="突然之间，就想写点东西。 有人问过我，为什么选择北漂？ 当时自己嘴上的回答很简单：自己的行业在西安找一份高工资的工作不容易，尤其是自己还处于处起步阶段，是个前端界的小学生。 其实，说心里话，当时自己心里也没有答案。 这么一两年过去了，可能心里面也有了答案。 一方面，我不想成为一个异类，帝都虽苦，可是不论是早上7点上班还是晚上10点下班，总有大堆大堆的人一起，虽然在外人看会像行尸走肉一样，但是每天真">
+<meta property="og:description" content="前言最近项目中使用Node开发，Nest.js作为框架，TypeOrm连接数据库，期间遇到一些坑，这里记录一下。 问题1. 插入数据之后返回的ID集合，ID相同在TypeOrm插入数据库操作的返回结果中，identifiers字段会是插入数据的id集合，预期情况应该是这样的： 1234[  &amp;#123; id: 1 &amp;#125;,  &amp;#123; id: 2 &amp;#125;] 但实际开发中发现是这样">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-24T00:13:45.619Z">
+<meta property="og:updated_time" content="2020-01-27T09:34:58.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="写在五一节后的一些思考">
-<meta name="twitter:description" content="突然之间，就想写点东西。 有人问过我，为什么选择北漂？ 当时自己嘴上的回答很简单：自己的行业在西安找一份高工资的工作不容易，尤其是自己还处于处起步阶段，是个前端界的小学生。 其实，说心里话，当时自己心里也没有答案。 这么一两年过去了，可能心里面也有了答案。 一方面，我不想成为一个异类，帝都虽苦，可是不论是早上7点上班还是晚上10点下班，总有大堆大堆的人一起，虽然在外人看会像行尸走肉一样，但是每天真">
+<meta name="twitter:title" content="2020-01-17-Node后台开发中使用TypeOrm遇到的问题">
+<meta name="twitter:description" content="前言最近项目中使用Node开发，Nest.js作为框架，TypeOrm连接数据库，期间遇到一些坑，这里记录一下。 问题1. 插入数据之后返回的ID集合，ID相同在TypeOrm插入数据库操作的返回结果中，identifiers字段会是插入数据的id集合，预期情况应该是这样的： 1234[  &amp;#123; id: 1 &amp;#125;,  &amp;#123; id: 2 &amp;#125;] 但实际开发中发现是这样">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://shangliushuai.cn/2019/05/07/写在五一节后的一些思考/">
+  <link rel="canonical" href="http://shangliushuai.cn/2020/01/17/Node后台开发中使用TypeOrm遇到的问题/">
 
 
 
 
 
-  <title>写在五一节后的一些思考 | Ryan Shang</title>
+  <title>2020-01-17-Node后台开发中使用TypeOrm遇到的问题 | Ryan Shang</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shangliushuai.cn/2019/05/07/写在五一节后的一些思考/">
+    <link itemprop="mainEntityOfPage" href="http://shangliushuai.cn/2020/01/17/Node后台开发中使用TypeOrm遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ryan Shang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">写在五一节后的一些思考</h1>
+          <h1 class="post-title" itemprop="name headline">2020-01-17-Node后台开发中使用TypeOrm遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T00:00:00+08:00">
-                2019-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-17T00:00:00+08:00">
+                2020-01-17
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心情/" itemprop="url" rel="index">
-                    <span itemprop="name">心情</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -342,32 +342,30 @@
       
 
       
-        <p>突然之间，就想写点东西。</p>
-<p>有人问过我，为什么选择北漂？</p>
-<p>当时自己嘴上的回答很简单：自己的行业在西安找一份高工资的工作不容易，尤其是自己还处于处起步阶段，是个前端界的小学生。</p>
-<p>其实，说心里话，当时自己心里也没有答案。</p>
-<p>这么一两年过去了，可能心里面也有了答案。</p>
-<p>一方面，我不想成为一个异类，帝都虽苦，可是不论是早上7点上班还是晚上10点下班，总有大堆大堆的人一起，虽然在外人看会像行尸走肉一样，但是每天真真切切能感受到自己的付出是有价值的，不只体现在收入上，还有个人成长和社会价值上。这样才让我有活着的感觉。</p>
-<p>另一方面，生活在更大的城市，就意味着可以见到更广阔的世界、学到更多的东西，去不断完善我的三观。我不想做井底之蛙，这个世界我需要学习的地方还有很多。假如有一天我真的能饱览井底甚至是井上的风光，真不是井底之蛙了，我也依旧会心存一点谦恭。</p>
-<p>这两个原因就足以支撑我北漂。虽然前路坎坷，但还有希望。世界就是这样，年轻的时候难免颠沛流离。</p>
-<p>我是幸运的，可以做自己喜欢的事业，有自己喜欢的人。</p>
-<p>热爱前端，但是确实发现这两年自己的成长还是太慢了。我觉得，一个人的知识面是一个圆圈，知识储备越多，圆圈越大，接触到的面积便越广阔，便能掌握和窥视更多的机会。现在的我的知识面圈子还是不够大，我还是需要更多的努力才能拥有更多的机会。我有自己的理想，但是理想越远大，也就说明我完成它需要更多的努力。</p>
-<p>现在感觉，社会整体是浮躁的，当局者迷，我也不能置身事外。这个社会不缺脑袋灵光的人，可缺持之以恒做傻事地聪明人。我不求做一个持之以恒做傻事的聪明人，我只想成为一个可以持之以恒的普通人，为了实现自己的理想一步一个脚印。</p>
-<p>希望自己记住自己的目标：</p>
-<ul>
-<li><p>工作方面，开源一个东西，由前端慢慢向全栈过渡。</p>
-</li>
-<li><p>生活方面，保持现在良好的作息，多运动，保证身体健康。</p>
-</li>
-<li><p>思想方面，尽可能在生活之余多读几本好书。</p>
-</li>
-<li><p>人生方面，希望自己在人生的终点，不后悔现在做出的每一个选择。</p>
-</li>
-</ul>
-<p>看似很简单，路还很远。</p>
-<p>思绪挺乱，随手记下来，只为了自勉。</p>
-<p>希望我自己记住，人最重要的是有一个上升的态势，不要因为外界干扰了自己。</p>
-<p>三十年众生马牛，六十年诸佛龙象。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近项目中使用Node开发，Nest.js作为框架，TypeOrm连接数据库，期间遇到一些坑，这里记录一下。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="1-插入数据之后返回的ID集合，ID相同"><a href="#1-插入数据之后返回的ID集合，ID相同" class="headerlink" title="1. 插入数据之后返回的ID集合，ID相同"></a>1. 插入数据之后返回的ID集合，ID相同</h4><p>在TypeOrm插入数据库操作的返回结果中，<code>identifiers</code>字段会是插入数据的id集合，预期情况应该是这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>但实际开发中发现是这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>因为，业务中后面要根据返回的ID值给其他数据做关联，所以返回相同ID会造成异常。</p>
+<p>查看了github，有相关issue，但是一直处于open状态：<a href="https://github.com/typeorm/typeorm/issues/2131。" target="_blank" rel="noopener">https://github.com/typeorm/typeorm/issues/2131。</a></p>
+<p>最后临时方案是采用在后面操作中，用id+数组index的方式，拼出id。</p>
+<h4 id="2-JavaScript对数据库中int和bigint的区别对待"><a href="#2-JavaScript对数据库中int和bigint的区别对待" class="headerlink" title="2. JavaScript对数据库中int和bigint的区别对待"></a>2. JavaScript对数据库中int和bigint的区别对待</h4><p>刚开始开发中，线下测试数据库id字段采用int，数据库SELECT操作返回的结果是Number，但是使用bigint，数据库返回的为String，初步猜想是因为bigint的值范围会超过Number，所以采用String。</p>
+<p>但是这样会对我们业务产生巨大影戏那个，一方面，DTO校验会无法通过，另一方面，问题1中的业务逻辑会受影响。</p>
+<p>经过查找各方文档，解决方案是在数据库连接配置中配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"supportBigNumbers": false</span><br></pre></td></tr></table></figure>
+<p>可以配置这个的原因是我们的业务ID距离Number的上线远远达不到，所以可以用这种方式让</p>
+<p>bigint也返回Number。</p>
+<p>但是这样配置，TypeOrm插入操作的返回值中的<code>identifiers</code>字段中的id还是String，所以问题1中的处理方式也要对String进行<code>parseInt</code>操作。</p>
+<h4 id="3-数据库版本区别问题"><a href="#3-数据库版本区别问题" class="headerlink" title="3. 数据库版本区别问题"></a>3. 数据库版本区别问题</h4><p>测试上线时，发现功能无法使用，测试环境正常，经过线上测试库分别连接测试定位后，发现还是<code>identifiers</code>，返回的id为<code>undefined</code>。</p>
+<p>线上数据库版本为5.6，测试数据库版本为5.7。TypeOrm的<code>insert()</code>生成的SQL会有插入id的操作，值为默认值，5.7中可以正常插入，5.6中会插入异常，返回值为<code>undefined</code>，导致报错异常事务回滚。</p>
+<p>经过测试，插入数据库操作时，id赋值为<code>null</code>可以解决，后更新上线，因为部署问题无法上线，等待后续上线后检验时候还存在问题。</p>
+<h4 id="4-TypeOrm数据库配置问题导致编译慢"><a href="#4-TypeOrm数据库配置问题导致编译慢" class="headerlink" title="4. TypeOrm数据库配置问题导致编译慢"></a>4. TypeOrm数据库配置问题导致编译慢</h4><p>项目刚开始开发时，每次本地编辑十分慢，查找文档等发现问题是配置原因，刚开始数据库的<code>entities</code>配置项是这样的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"entities": ["src/entities/*.ts"]</span><br></pre></td></tr></table></figure>
+<p>编译时候应该是先会把ts文件编译成js，所以耗时比较久，后改成</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"entities": ["output/nodeapp/kid-mis-backend/src/entities/*.js"]</span><br></pre></td></tr></table></figure>
+<p>直接使用编译后的js文件，编译速度大大提升。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>后端开发和前端开发有很大的区别，各种解决问题思路不同，后端部分还有很多需要我学习的地方。</p>
 
       
     </div>
@@ -385,7 +383,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/心情/" rel="tag"># 心情</a>
+            <a href="/tags/Node/" rel="tag"># Node</a>
+          
+            <a href="/tags/TypeOrm/" rel="tag"># TypeOrm</a>
           
         </div>
       
@@ -398,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/02/两道有意思的面试题/" rel="next" title="两道有意思的面试题">
-                <i class="fa fa-chevron-left"></i> 两道有意思的面试题
+              <a href="/2020/01/05/个人终端环境配置（zsh）/" rel="next" title="2020-01-05-个人终端环境配置（zsh）">
+                <i class="fa fa-chevron-left"></i> 2020-01-05-个人终端环境配置（zsh）
               </a>
             
           </div>
@@ -407,10 +407,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/15/个人电脑设备常用软件整理/" rel="prev" title="2019-12-15-个人电脑设备常用软件整理">
-                2019-12-15-个人电脑设备常用软件整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -533,6 +538,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-插入数据之后返回的ID集合，ID相同"><span class="nav-number">2.1.</span> <span class="nav-text">1. 插入数据之后返回的ID集合，ID相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-JavaScript对数据库中int和bigint的区别对待"><span class="nav-number">2.2.</span> <span class="nav-text">2. JavaScript对数据库中int和bigint的区别对待</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据库版本区别问题"><span class="nav-number">2.3.</span> <span class="nav-text">3. 数据库版本区别问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-TypeOrm数据库配置问题导致编译慢"><span class="nav-number">2.4.</span> <span class="nav-text">4. TypeOrm数据库配置问题导致编译慢</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
