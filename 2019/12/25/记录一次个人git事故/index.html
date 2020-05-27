@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ryan Shang">
 <meta property="og:description" content="今天圣诞节，在工作时侯，出现了一个有意思的意外情况，这里做下记录。 事情经过一个比较大的需求，每天都保持了一次个人开发分支提交。今天发现有4次提交没有合并到主开发分支，于是动手合并，合并记如下： 123456789101112131410262  gco dev10263  git pull10264  git log10265  gco feature/my-dev-branch10266  g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-27T10:04:23.986Z">
+<meta property="og:updated_time" content="2020-03-18T02:29:40.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录一次个人git事故">
 <meta name="twitter:description" content="今天圣诞节，在工作时侯，出现了一个有意思的意外情况，这里做下记录。 事情经过一个比较大的需求，每天都保持了一次个人开发分支提交。今天发现有4次提交没有合并到主开发分支，于是动手合并，合并记如下： 123456789101112131410262  gco dev10263  git pull10264  git log10265  gco feature/my-dev-branch10266  g">
@@ -348,7 +348,7 @@
 <p>我们部门合并到主开发分支前，要求合并下commit记录，按照以往的流程是没有问题的。</p>
 <p>但是在执行<code>git rebase -i HEAD~4</code>合并commit记录时候，可能最近用vim写文件删除操作较多，顺手把三个记录直接使用vim快捷操作<code>dd</code>删除并快速保存，并不是修改提交记录前的标签。当时并没有注意，执行<code>git push -f</code>后，发现VSCode中打开的文件显示已删除，于是才发现问题。</p>
 <h4 id="事情后果"><a href="#事情后果" class="headerlink" title="事情后果"></a>事情后果</h4><p>如果不处理，相当于三天工作量打水漂，代码需要重写，严重影响排期。</p>
-<h4 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h4><p>第一反应是执行<code>git log</code>查看已经提交的记录是否存在，存在的话使用<code>git reset</code>配合记录的哈希值可以恢复到那次提交记录。结果当然相关 的commit 记录已经被删除。</p>
+<h4 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h4><p>第一反应是执行<code>git log</code>查看已经提交的记录是否存在，存在的话使用<code>git reset</code>配合记录的哈希值可以恢复到那次提交记录。结果当然相关的 commit 记录已经被删除。</p>
 <p>如果可以找到丢失的commit记录，应该就可以快速找回丢失的代码。</p>
 <p>于是去git官网和搜索引擎下找了commit记录丢失后的相关命令，发现这个命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
